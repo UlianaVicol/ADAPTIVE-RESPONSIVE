@@ -1,0 +1,118 @@
+ <!--  
+     CSS media query
+        *breakpoints
+        *features
+        (2 modes --   desktop/mobile)
+ -->
+<!--
+    HW1:max-, min-, + width, height Were / Context | CSS?
+
+    max-width- aceasta proprietatea este utilizată pentru a seta lățimea maximă a unui element
+    si poate fi specificată în valori de lungime, cum ar fi in px, cm , sau în % din blocul care conține. 
+    Se mai aplica la imagini, container,paragraf,form..
+
+    HW2:Why? padding < margin | DESIGN
+
+    padding:0.5em; i s-a dat un spațiu din interiorul marginii blocului care separă chenarul de conținut 
+    (cu alte cuvinte: continutul sa nu fie lipit de marginea blocului adica sa aiba un pic de aer, daca ar fi fara padding nu ar arata bine, 
+    deoarece blokurile au bordura color iar continutul s-ar lipi de acea bordura/margine si nu ar arata bine ca design ). 
+
+    margin-bottom:0.75em; i s-a dat spațiul din afara marginii care separă un bloc de blocurile adiacente 
+    (cu alte cuvinte daca am mari mai mult margin-bottom atunci distanta de jos va fi mai mare dintre blocuri ceea ce nu e prea bine.
+    si invers se vor lipi unul de altul iar ca design nu vor arata bine) 
+
+
+
+    HW3:Create 2nd breakpoint (400..600) < bp2(.content - > 100% from body) | CSS
+
+-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Adaptive Content | 2 modes</title>
+     <style>
+         body{
+            font-family:sans-serife;
+            background-color: #ddd;
+         }
+         .content{
+            width:80%;
+            margin:1em auto;
+            background-color: #fff;
+            padding:1em;
+            text-align: center;
+
+         }
+         .content article{
+             width:45%;
+             border:1px solid #eee;
+             padding:0.5em;
+             margin-bottom:0.75em;
+
+             display: inline-block;
+             text-align: left;
+         }
+         .content article:nth-child(even){
+             margin-right:.5em;
+
+         }
+         .content article:nth-child(odd){
+             margin-left:.5em;
+            }
+            /* MOBILE < 1000 - add rules*/
+            @media (max-width: 1000px){
+                .content article{
+                    display:block;
+                    width:auto;
+                    margin-left:0 !important;
+                    margin-right:0 !important;
+                }
+            }
+            @media (max-width: 600px){
+                .content{
+                    width:auto;
+                    margin:0;
+                }
+            }
+            /* SAU */
+           /* @media (min-width: 400px){
+                .content{
+                    width:auto;
+                    margin:0;
+                }
+            }*/
+     </style>
+ </head>
+ <body>
+     <main class="content">
+        <header>
+            <h1>Fresh articles</h1>
+        </header>
+        <article>
+            <h2>Article title 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quasi in perspiciatis et placeat voluptates nihil, voluptate laboriosam porro a saepe repellendus aspernatur iure non dolorem eius? Quae, delectus laudantium!</p>
+            <p>Enim, incidunt quas! Tempora velit voluptatem, enim, ex quaerat dicta inventore voluptas maiores repellendus mollitia molestias! Impedit sint magnam, est, deserunt officia doloremque aliquid optio itaque recusandae aut accusamus necessitatibus.</p>
+        </article>
+        <article>
+            <h2>Article title 2</h2>
+            <p>Dolores ullam odio nostrum quam doloremque. Excepturi blanditiis aliquid accusamus totam odit. Aliquid excepturi hic autem ad, eius quibusdam nemo nam aspernatur magni? Expedita, aspernatur ab. Voluptatem dolor ex blanditiis?</p>
+            <p>Repellendus officiis laborum nisi consequuntur quasi facilis culpa laudantium deleniti expedita minima, fugiat odio assumenda ab et, nam, porro voluptate nihil. Nam blanditiis dolor quo dignissimos numquam, debitis illo fugiat.</p>
+        </article>
+        <article>
+            <h2>Article title 3</h2>
+            <p>Doloribus facere sed excepturi reprehenderit qui, pariatur, nostrum corrupti, fuga iure necessitatibus aliquam sint eum esse! Illum quia, officia modi optio veritatis consectetur, nobis excepturi soluta dolorum magnam voluptas qui!</p>
+            <p>Atque quo, magni accusamus laboriosam quos est, voluptatibus dignissimos provident similique obcaecati id ducimus rem, consectetur suscipit quibusdam ab aliquam recusandae nesciunt? Suscipit reiciendis saepe aut quos? Quae, veniam minima?</p>
+        </article>
+        <article>
+            <h2>Article title 4</h2>
+            <p>Sequi iure quidem quaerat? Dicta hic natus, tenetur cum velit facere autem harum cumque. Eos, officiis aut sequi a placeat, omnis atque aperiam culpa neque quia illum voluptas minima illo?</p>
+            <p>Est dignissimos quasi iure beatae sequi. Quis laudantium inventore esse excepturi beatae, aliquid error libero quasi perferendis! Nemo, dicta tenetur! Illo voluptate inventore, commodi eligendi blanditiis animi voluptatum. Eligendi, officiis.</p>
+        </article>
+        <footer>
+            <a href="">Read more articles...</a>
+        </footer>
+        <article>
+     </main>
+ </body>
+ </html>
